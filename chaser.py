@@ -4,13 +4,22 @@ import datetime
 import csv
 import os
 
+
 # Create an instance of Outlook
 outlook = win32.Dispatch("outlook.application")
 namespace = outlook.GetNamespace("MAPI")
 
 # Path to the CSV file where sent emails are logged
 sent_emails_file = 'sent_emails.csv'
+cheaser_log = 'cheaser_log_file.csv'
 
+
+def log_sent_email(client_name, client_email):
+    with open(cheaser_log, mode='a', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow([client_name, client_email, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")])
+        
+        
 # Function to check if a client has replied
 def has_replied(client_email):
     try:
@@ -52,11 +61,13 @@ try:
             sent_time = datetime.datetime.strptime(row[2], "%Y-%m-%d %H:%M:%S")
 
             # Check if 72 hours have passed
-            if (datetime.datetime.now() - sent_time).total_seconds() >300:
+            if (datetime.datetime.now() - sent_time).total_seconds() >30:
                 # Check if the client has replied
                 if not has_replied(client_email):
                     # Send the chaser email
                     send_chaser_email(client_name, client_email)
+                    # Log the sent email
+                    log_sent_email(client_name, client_email)
 except FileNotFoundError:
     print("Error: Sent emails log file not found.")
 except Exception as e:

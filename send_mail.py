@@ -7,7 +7,7 @@ import time
 
 # Define the path to the Excel file and the download folder
 excel_file = 'clients.xlsx'
-download_folder = r"C:\Users\MUHAMMAD NOUKHEZ\Dropbox"
+download_folder = r"D:\Codding\Projects\Automation_email"
 sent_emails_file = 'sent_emails.csv'
 
 # Load the client data from Excel
@@ -54,7 +54,7 @@ for index, row in client_data.iterrows():
         mail.Body = body_text
         
         # Attach the report
-        report_path = os.path.join(download_folder, "Lux_Job.xlsx")  # Change file format if needed
+        report_path = os.path.join(download_folder, "April_2023_Report.xlsx")  # Change file format if needed
         if os.path.exists(report_path):
             mail.Attachments.Add(report_path)
         else:

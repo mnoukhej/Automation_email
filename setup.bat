@@ -15,27 +15,23 @@ pip install -r requirements.txt
 echo requirements installed
 
 
+:: Create and configure .gitignore
 echo Creating .gitignore file...
 
-echo .venv/ > .gitignore
-:: Create .gitignore and add the .venv directory
-echo __pycache__/ >> .gitignore
-echo *.pyc >> .gitignore
-echo *.pyo >> .gitignore
-echo *.log >> .gitignore
-::echo db.sqlite3 >> .gitignore
-echo .env >> .gitignore
+(
+    echo .venv/
+    echo __pycache__/
+    echo *.pyc
+    echo *.pyo
+    echo *.log
+    echo db.sqlite3
+    echo .env
+    echo .idea/
+    echo .vscode/
+    echo .DS_Store
+) > .gitignore
+
 echo .gitignore file created.
-
-echo __pycache__/ >> .gitignore
-echo *.pyc >> .gitignore
-echo *.pyo >> .gitignore
-echo *.log >> .gitignore
-echo db.sqlite3 >> .gitignore
-echo .env >> .gitignore
-
-
-
 
 echo.
 echo Setup complete! Now you can run the server using run_server.bat

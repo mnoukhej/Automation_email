@@ -6,7 +6,20 @@
 ## Folder Structure
 
 <!-- TREE_START -->
-
+```
+├── April_2023_Report.xlsx
+├── README.md
+├── WhatsApp.ipynb
+├── chaser.py
+├── cheaser_log_file.csv
+├── clients.xlsx
+├── direct_chaser.py
+├── requirements.txt
+├── send_mail.py
+├── sent_emails.csv
+├── setup.bat
+└── update_tree.py
+```
 <!-- TREE_END -->
 
 

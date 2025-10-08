@@ -7,16 +7,16 @@
 
 <!-- TREE_START -->
 ```
-├── April_2023_Report.xlsx
+├── Code
+│   ├── April_2023_Report.xlsx
+│   ├── chaser.py
+│   ├── cheaser_log_file.csv
+│   ├── clients.xlsx
+│   ├── direct_chaser.py
+│   ├── send_mail.py
+│   └── sent_emails.csv
 ├── README.md
-├── WhatsApp.ipynb
-├── chaser.py
-├── cheaser_log_file.csv
-├── clients.xlsx
-├── direct_chaser.py
 ├── requirements.txt
-├── send_mail.py
-├── sent_emails.csv
 ├── setup.bat
 └── update_tree.py
 ```

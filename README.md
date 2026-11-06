@@ -1,4 +1,4 @@
-# project
+# 📁 Automation Email
 
 ## Project Overview
 
